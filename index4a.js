@@ -14,3 +14,6 @@ app.get("/x/:x/y/:y/z/:z",(req,res)=>{
     let z=parseInt(req.params.z)
     res.send((x+y+z).toString())
 })
+app.get("/:a/:b/:c/:d",(req,res)=>{
+    res.send("Hello students")
+})
