@@ -43,14 +43,19 @@ app.post("/",(req,res)=>{
     users.push(user)
     res.json(users)
 })
+// app.delete("/:id",(req,res)=>{
+//     const id=Number(req.params.id)
+//     const index=users.findIndex((user)=>user.id===id)
+//     if(index>-1){
+//         users.splice(index,1)
+//         res.json(users)
+//     }
+//     else{
+//         res.status(404).send("User not found")
+//     }
+// })
+
 app.delete("/:id",(req,res)=>{
-    const id=Number(req.params.id)
-    const index=users.findIndex((user)=>user.id===id)
-    if(index>-1){
-        users.splice(index,1)
-        res.json(users)
-    }
-    else{
-        res.status(404).send("User not found")
-    }
+    users=users.filter((user)=>user.id!== Number(req.params.id));
+    res.json(users)
 })
