@@ -41,7 +41,7 @@ app.get("/:id",(req,res)=>{
 app.post("/",(req,res)=>{
     const user=req.body;
     users.push(user)
-    res.json(users)
+    res.status(201).json(users)
 })
 // app.delete("/:id",(req,res)=>{
 //     const id=Number(req.params.id)
